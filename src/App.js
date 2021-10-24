@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Tmdb from './Tmds';
 import MovieRow from './components/MovieRow';
+import './App.css';
 
 export default () => {
   const [movieList, setMovieList] = useState([]);
