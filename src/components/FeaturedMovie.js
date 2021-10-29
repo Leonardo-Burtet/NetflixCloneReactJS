@@ -14,12 +14,14 @@ export default ({ item }) => {
       style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path})`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/original/${
+          item.backdrop_path ? item.backdrop_path : item.poster_path
+        })`,
       }}
     >
       <div className="featured--vertical">
         <div className="featured--horizontal">
-          <div className="featured--name">{item.original_name}</div>
+          <div className="featured--name">{item.name}</div>
           <div className="featured--info">
             <div className="featured--points">{item.vote_average} pontos</div>
             <div className="featured--year">{firstDate.getFullYear()}</div>
@@ -29,6 +31,7 @@ export default ({ item }) => {
             </div>
           </div>
           <div className="featured--description">{item.overview}</div>
+          {console.log(item)}
           <div className="featured--buttons">
             <a href={`/watch/${item.id}`} className="featured--watchbutton">
               ➤ Assistir
