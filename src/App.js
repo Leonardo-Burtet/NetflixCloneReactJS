@@ -61,6 +61,11 @@ export default () => {
           ❤️
         </span>
       </footer>
+      {movieList.length <= 0 && (
+        <div className="loading">
+          <img src="https://i.gifer.com/8Etj.gif" alt="Carregando" />
+        </div>
+      )}
     </div>
   );
 };
